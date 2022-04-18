@@ -13,11 +13,7 @@ public class Main {
 		System.out.println("Deer gather rate " + deer.getGatherRate() + "->" + deer.getType());
 
 		List<Archer> archers = new ArrayList<Archer>();
-		archers.add(new Archer());
-		archers.add(new Archer());
-		archers.add(new Archer());
-		archers.add(new Archer());
-		archers.add(new Archer());
+		
 		
 		System.out.println(archers.size() + " archers");
 
