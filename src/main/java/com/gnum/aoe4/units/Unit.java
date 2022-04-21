@@ -5,7 +5,7 @@ import java.util.Map;
 
 import com.gnum.aoe4.common.ResourceType;
 
-public class Unit {
+public abstract class Unit {
 	
 	private Map<ResourceType, Double> cost;
 	protected int creationTime;
