@@ -3,23 +3,38 @@ package com.gnum.aoe4.units;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.gnum.aoe4.common.Cost;
 import com.gnum.aoe4.common.ResourceType;
 
-public abstract class Unit {
+public class Unit {
 	
-	private Map<ResourceType, Double> cost;
-	protected int creationTime;
+	private String name;
+	private Cost cost;
+	private double creationTime;
 	
-	public Unit() {
-		cost = new HashMap<ResourceType, Double>();
+	public Unit(String name, Cost cost,double creationTime) {
+		this.name = name;
+		this.cost = cost;
+		this.creationTime = creationTime;
+		
 	}
 	
-	public double getCostPerMinuteByResourceType(ResourceType type) {
-		return (cost.get(type) / creationTime) * 60; // Get creation time in minutes
+	public double getCostPerMinuteFood() {
+		return (cost.getFood() / creationTime) * 60; // Get creation time in minutes
 	}
 	
-	protected void setCost(ResourceType type, double cost) {
-		this.cost.put(type, cost);
+	public double getCostPerMinuteWood() {
+		return (cost.getWood() / creationTime) * 60; // Get creation time in minutes
 	}
+	
+	public double getCostPerMinuteGold() {
+		return (cost.getGold() / creationTime) * 60; // Get creation time in minutes
+	}
+	
+	public double getCostPerMinuteStone() {
+		return (cost.getStone() / creationTime) * 60; // Get creation time in minutes
+	}
+	
+	
 	
 }
