@@ -14,8 +14,6 @@ public class Cost {
 		this.stone = stone;
 	}
 	
-	public 
-
 	public int getFood() {
 		return food;
 	}
