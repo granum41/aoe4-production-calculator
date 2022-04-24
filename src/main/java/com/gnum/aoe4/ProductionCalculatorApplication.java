@@ -1,5 +1,6 @@
 package com.gnum.aoe4;
 
+import com.gnum.aoe4.api.AllUnitTypesAPI;
 import com.gnum.aoe4.api.ResourcesGatheredAPI;
 
 import io.dropwizard.core.Application;
@@ -25,10 +26,8 @@ public class ProductionCalculatorApplication extends Application<ProductionCalcu
     @Override
     public void run(final ProductionCalculatorConfiguration configuration,
                     final Environment environment) {
-
-    	final ResourcesGatheredAPI resource = new ResourcesGatheredAPI();
-    	environment.jersey().register(resource);
-
+    	environment.jersey().register(new ResourcesGatheredAPI());
+    	environment.jersey().register(new AllUnitTypesAPI());
     }
 
 }
